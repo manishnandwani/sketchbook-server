@@ -13,7 +13,6 @@ const { Server } = require("socket.io");
 const io = new Server(httpServer, {cors : URL});
 
 io.on("connection", (socket) => {
-    console.log("server connected")
     socket.on('beginPath', (arg) => {
         socket.broadcast.emit('beginPath',arg)
     })
